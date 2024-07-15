@@ -148,10 +148,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
     setGlobeData(filteredPoints);
   };
 
+  
   useEffect(() => {
     if (globeRef.current && globeData) {
       globeRef.current
-       
+        .hexPolygonsData(countries.features)
         .hexPolygonResolution(3)
         .hexPolygonMargin(0.7)
         .showAtmosphere(defaultProps.showAtmosphere)
